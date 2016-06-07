@@ -1019,7 +1019,7 @@ return array(
       'class' => 'crm-select2',
     ),
     'pseudoconstant' => array(
-      'callback' => 'CRM_Core_Theme::getThemes',
+      'callback' => 'call://theme/getThemes',
     ),
     'default' => 'default',
     'add' => '4.7',
@@ -1040,7 +1040,7 @@ return array(
       'class' => 'crm-select2',
     ),
     'pseudoconstant' => array(
-      'callback' => 'CRM_Core_Theme::getThemes',
+      'callback' => 'call://theme/getThemes',
     ),
     'default' => 'default',
     'add' => '4.7',
