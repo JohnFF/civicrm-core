@@ -562,6 +562,7 @@ abstract class CRM_Utils_Hook {
   }
 
   /**
+<<<<<<< HEAD
    * (Experimental) This hook is called when build the menu table.
    *
    * @param array $items
@@ -573,6 +574,23 @@ abstract class CRM_Utils_Hook {
     return self::singleton()->invoke(array('items'), $items,
       self::$_nullObject, self::$_nullObject, self::$_nullObject, self::$_nullObject, self::$_nullObject,
       'civicrm_alterMenu'
+    );
+  }
+
+  /**
+   * @param array $themes
+   *   List of themes, keyed by name.
+   *   Ex:
+   *   array('judy' => array(
+   *     'title' => 'The Judy Theme',
+   *     'css_callback' => $callable, // Optional: override file mapping mechanism
+   *   )).
+   * @return mixed
+   */
+  public static function themes(&$themes) {
+    return self::singleton()->invoke(1, $themes,
+      self::$_nullObject, self::$_nullObject, self::$_nullObject, self::$_nullObject, self::$_nullObject,
+      'civicrm_themes'
     );
   }
 

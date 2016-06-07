@@ -958,6 +958,7 @@ return array(
     'description' => ts('Default to only loading matches against this number of contacts'),
     'help_text' => ts('Deduping larger databases can crash the server. By configuring a limit other than 0 here the dedupe query will only search for matches against a limited number of contacts.'),
   ),
+<<<<<<< HEAD
   'syncCMSEmail' => array(
     'group_name' => 'CiviCRM Preferences',
     'group' => 'core',
@@ -1006,5 +1007,48 @@ return array(
       'optionGroupName' => 'activity_type',
     ),
     'quick_form_type' => 'Select',
+=======
+  'theme_frontend' => array(
+    'group_name' => 'CiviCRM Preferences',
+    'group' => 'core',
+    'name' => 'theme_frontend',
+    'type' => 'String',
+    'quick_form_type' => 'Select',
+    'html_type' => 'Select',
+    'html_attributes' => array(
+      'class' => 'crm-select2',
+    ),
+    'pseudoconstant' => array(
+      'callback' => 'CRM_Core_Theme::getThemes',
+    ),
+    'default' => 'default',
+    'add' => '4.7',
+    'title' => 'Frontend Theme',
+    'is_domain' => 1,
+    'is_contact' => 0,
+    'description' => 'Theme to use on frontend pages',
+    'help_text' => NULL,
+  ),
+  'theme_backend' => array(
+    'group_name' => 'CiviCRM Preferences',
+    'group' => 'core',
+    'name' => 'theme_backend',
+    'type' => 'String',
+    'quick_form_type' => 'Select',
+    'html_type' => 'Select',
+    'html_attributes' => array(
+      'class' => 'crm-select2',
+    ),
+    'pseudoconstant' => array(
+      'callback' => 'CRM_Core_Theme::getThemes',
+    ),
+    'default' => 'default',
+    'add' => '4.7',
+    'title' => 'Backend Theme',
+    'is_domain' => 1,
+    'is_contact' => 0,
+    'description' => 'Theme to use on backend pages',
+    'help_text' => NULL,
+>>>>>>> CRM-18792 - CRM_Core_Theme - Add helper for loading CSS files from themes
   ),
 );
