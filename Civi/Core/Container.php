@@ -189,8 +189,8 @@ class Container {
       array()
     ));
 
-    $container->setDefinition('theme', new Definition(
-      'Civi\Core\Theme',
+    $container->setDefinition('themes', new Definition(
+      'Civi\Core\Themes',
       array()
     ));
 
