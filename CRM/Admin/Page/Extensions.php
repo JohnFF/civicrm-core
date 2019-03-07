@@ -248,15 +248,8 @@ class CRM_Admin_Page_Extensions extends CRM_Core_Page_Basic {
 
     // build list of available downloads
     $remoteExtensionRows = array();
-    $compat = CRM_Extension_System::getCompatibilityInfo();
-
     foreach ($remoteExtensions as $info) {
-      if (!empty($compat[$info->key]['obsolete'])) {
-        continue;
-      }
       $row = (array) $info;
-
-      $category = $this->getExtensionCategory($row);
       $row['id'] = $info->key;
       $action = CRM_Core_Action::UPDATE;
       $row['action'] = CRM_Core_Action::formLink(self::links(),
@@ -362,7 +355,6 @@ class CRM_Admin_Page_Extensions extends CRM_Core_Page_Basic {
     }
     $extensionCategoryNames['DataCleaning'] = 'Data Cleaning';
     $extensionCategoryNames['SMSProviders'] = 'SMS Providers';
-    $extensionCategoryNames['PaymentProcessors'] = 'Payment Processors';
     $this->assign('extensionCategoryNames', $extensionCategoryNames);
   }
 
@@ -388,8 +380,6 @@ class CRM_Admin_Page_Extensions extends CRM_Core_Page_Basic {
     unset ($extensionCategoryToTabMap['SMSProviders']);
     $extensionCategoryToTabMap['Utilities'][] = 'DataCleaning';
     unset ($extensionCategoryToTabMap['DataCleaning']);
-    $extensionCategoryToTabMap['Finance'][] = 'PaymentProcessors';
-    unset ($extensionCategoryToTabMap['PaymentProcessors']);
 
     $this->assign('extensionCategoryToTabMap', $extensionCategoryToTabMap);
   }
